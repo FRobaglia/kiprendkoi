@@ -12,6 +12,10 @@ app.get('/', function(req, res) {
   res.render('index', { title: 'Page d\'accueil' });
 });
 
+app.get('/party/:id', function(req, res) {
+  res.render('party', { title: 'Evenement' });
+});
+
 
 
 app.post('/party', function(req, res) {
