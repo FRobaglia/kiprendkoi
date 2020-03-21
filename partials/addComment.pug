@@ -1,0 +1,8 @@
+h2 Lâcher un com'
+form(method="post" action="/comment/" + party._id)
+  div
+    label(for="name") Contenu du commentaire
+    textarea(name="name" id="name" required minlength="3" placeholder="Trop hâte d'y être.")
+    label(for="user") Votre nom/pseudo
+    textarea(name="user" id="user" required minlength="3" placeholder="Georges Duroy")
+  button(type="submit") Ajouter mon commentaire
