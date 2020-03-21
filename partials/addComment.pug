@@ -1,5 +1,5 @@
 h2 Lâcher un com'
-form(method="post" action="/comment/" + party._id)
+form(method="post" action="/addComment/" + party._id)
   div
     label(for="name") Contenu du commentaire
     textarea(name="name" id="name" required minlength="3" placeholder="Trop hâte d'y être.")

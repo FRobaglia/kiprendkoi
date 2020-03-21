@@ -7,3 +7,8 @@ label(for="url") Partagez l'événement
 input(id="url" value=`${url}`)
 
 include ../partials/addComment.pug
+
+h2 Les com's
+
+each comment in party.items
+  include ../partials/comment.pug

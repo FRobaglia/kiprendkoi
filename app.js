@@ -32,13 +32,19 @@ app.post('/party', function(req, res) {
   .catch((err) => res.send(err));
 });
 
-app.post('/comment/:partyId', function(req, res) {
+app.post('/addComment/:partyId', function(req, res) {
   axios
   .post(`${process.env.API_URL}/party/${req.params.partyId}/items`, req.body)
   .then(({ data }) => res.redirect(`/party/${req.params.partyId}`))
   .catch((err) => res.send(err));
 });
 
+app.post('/deleteComment/:partyId/:commentId', function(req, res) {
+  axios
+  .delete(`${process.env.API_URL}/party/${req.params.partyId}/items/${req.params.commentId}`, req.body)
+  .then(({ data }) => res.redirect(`/party/${req.params.partyId}`))
+  .catch((err) => res.send(err));
+});
 
 
 
