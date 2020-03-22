@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const pa11y = require('pa11y');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,6 +49,13 @@ app.post('/deleteComment/:partyId/:commentId', function(req, res) {
   .catch((err) => res.send(err));
 });
 
-
+pa11y('http://localhost:3000').then((results) => {
+  if (typeof results.issues !== 'undefined' && results.issues.length > 0) {
+    console.warn('Il y a des problèmes d\'accessibilité sur votre app. Voir ci dessous !')
+    console.error(results)
+  } else {
+    console.log('Félicitations, aucun problème d\'accessibilité detecté sur localhost:3000 !')
+  }
+});
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
