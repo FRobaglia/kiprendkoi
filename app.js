@@ -49,12 +49,12 @@ app.post('/deleteComment/:partyId/:commentId', function(req, res) {
   .catch((err) => res.send(err));
 });
 
-pa11y('http://localhost:3000').then((results) => {
+pa11y(`${process.env.FRONT_URL}:${process.env.PORT}`).then((results) => {
   if (typeof results.issues !== 'undefined' && results.issues.length > 0) {
     console.warn('Il y a des problèmes d\'accessibilité sur votre app. Voir ci dessous !')
     console.error(results)
   } else {
-    console.log('Félicitations, aucun problème d\'accessibilité detecté sur localhost:3000 !')
+    console.log(`Félicitations, aucun problème d\'accessibilité detecté sur ${process.env.FRONT_URL}:${process.env.PORT} !`)
   }
 });
 
