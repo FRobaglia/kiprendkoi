@@ -2,7 +2,7 @@
 
 ## Technologie choisie
 
-J'ai choisi de m'intéresser à pa11y, un package npm permettant de détecter les eventuels problèmes d'accessiblité sur les différentes page de notre pwa.
+J'ai choisi de m'intéresser à pa11y, un package npm permettant de détecter les eventuels problèmes d'accessiblité sur les différentes pages de notre pwa.
 Le package nécéssitant d'installer Chromium, le temps de téléchargement peut-être relativement long.
 
 ## Comment ça marche ?
