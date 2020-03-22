@@ -9,5 +9,29 @@
   <body>
     <h1>Oops !</h1>
     <h2>Vous êtes hors ligne</h2>
+
+    <h3>Vos événements</h3>
+    <ul class="parties"></ul>
+
+    <script>
+
+      let $partyList = document.querySelector('.parties')
+
+      caches.open('parties').then((cache) =>
+        cache.keys().then((keys) =>
+          keys.forEach((key) => {
+            const name = localStorage.getItem(key.url);
+            if (name) {
+              const $item = document.createElement('li');
+              const $link = document.createElement('a');
+              $link.href = key.url;
+              $link.innerHTML = name;
+              $partyList.appendChild($item);
+              $item.appendChild($link);
+            }
+          })
+        )
+      );
+    </script>
   </body>
 </html>

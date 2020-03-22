@@ -1,4 +1,7 @@
 include ../partials/header.pug
+script.
+  party = !{JSON.stringify(party)}
+
 h2=party.name
 h3 Créé par #{party.author}
 
