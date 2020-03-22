@@ -1,4 +1,6 @@
 @import 'vendors/reset.scss';
+@import 'config/medias.scss';
+@import 'blocs/newParty.scss';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -29,7 +31,7 @@ h4 {
   font-size: 18px;
 }
 
-input, textarea {
+input, textarea, label {
   display: block;
   margin: 10px 0;
 }
