@@ -4,7 +4,7 @@ h2=party.name
 h3 Créé par #{party.author}
 
 label(for="url") Partagez l'événement
-input(id="url" value=`${url}`)
+input(id="url" value=`${url}` data-clipboard=`${url}`)
 
 include ../partials/addComment.pug
 
